@@ -35,17 +35,14 @@ export default function Home() {
             <h1 className="text-4xl font-extrabold text-gray-900 tracking-tight">
               My Tasks
             </h1>
-            <p className="text-gray-500 mt-2 text-sm">
-              Keep track of your daily progress
-            </p>
           </header>
 
           <TodoInput onAdd={addTodo} />
 
-          <TodoFilters 
-            currentFilter={filter} 
-            onFilterChange={setFilter} 
-            activeCount={activeCount} 
+          <TodoFilters
+            currentFilter={filter}
+            onFilterChange={setFilter}
+            activeCount={activeCount}
           />
 
           <div className="mt-8 space-y-4">
@@ -65,14 +62,14 @@ export default function Home() {
                   <FiLoader className="w-10 h-10 mx-auto opacity-20" />
                 </div>
                 <p className="text-gray-400 text-sm italic">
-                  {filter === 'all' 
-                    ? "Your list is empty. Time to be productive!" 
+                  {filter === 'all'
+                    ? "Your list is empty."
                     : `No ${filter} tasks found.`}
                 </p>
               </div>
             )}
           </div>
-          
+
           {todos.length > 0 && (
             <footer className="mt-10 pt-6 border-t border-gray-100 text-center">
               <p className="text-[10px] text-gray-400 uppercase font-bold tracking-widest">
